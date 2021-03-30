@@ -26,6 +26,10 @@ public class RateServiceImpl implements RateService {
 
 	@Override
 	public RateEntity saveRate(RateEntity entity) throws ServerException {
+		Optional<RateEntity> rateEntity = rateRepo.findById(entity.getRateId());
+		if(rateEntity.isPresent()) {
+			throw new ServerException("Rate already exists");
+		}
 		return rateRepo.save(entity);
 	}
 

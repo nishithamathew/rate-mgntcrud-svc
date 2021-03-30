@@ -53,5 +53,9 @@ public class RateController {
 		rateService.deleteRate(rateId);
 		return new ResponseEntity<String>("Record Deleted", HttpStatus.OK);
 	}
-
+	@RequestMapping(value = "/")
+	public String hello() throws InterruptedException {
+		Thread.sleep(3000);
+		return "Welcome Hystrix";
+	}
 }

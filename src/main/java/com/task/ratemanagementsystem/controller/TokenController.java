@@ -5,25 +5,21 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/rate")
 public class TokenController {
 
-    @PostMapping("/user")
-    public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
+    @PostMapping(value = "/users", consumes = "application/json")
+    public User login(@RequestBody User userRequest) {
 
-        String token = getJWTToken(username);
+        String token = getJWTToken(userRequest.getUser());
         User user = new User();
-        user.setUser(username);
+        user.setUser(userRequest.getUser());
         user.setToken(token);
         return user;
 
