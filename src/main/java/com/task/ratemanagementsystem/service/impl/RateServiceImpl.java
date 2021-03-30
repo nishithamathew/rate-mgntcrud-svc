@@ -44,12 +44,12 @@ public class RateServiceImpl implements RateService {
 
 	@Override
 	public RateEntity updateRate(RateEntity entity) throws ServerException, RateNotFound {
-		Optional<RateEntity> optinalEntity = rateRepo.findById(entity.getRateId());
-		if (optinalEntity.isEmpty()) {
+		Optional<RateEntity> optionalEntity = rateRepo.findById(entity.getRateId());
+		if (optionalEntity.isEmpty()) {
 			throw new RateNotFound("RateId not found in RMS");
 		}
-		BeanUtils.copyProperties(entity, optinalEntity.get());
-		return rateRepo.save(optinalEntity.get());
+		BeanUtils.copyProperties(entity, optionalEntity.get());
+		return rateRepo.save(optionalEntity.get());
 	}
 
 	@Override

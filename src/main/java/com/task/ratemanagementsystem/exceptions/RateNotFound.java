@@ -10,5 +10,4 @@ public class RateNotFound extends Exception {
 	public RateNotFound(String message) {
 		super(message);
 	}
-
 }

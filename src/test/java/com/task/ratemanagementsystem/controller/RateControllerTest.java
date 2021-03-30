@@ -4,8 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.time.LocalDateTime;
 
+import com.task.ratemanagementsystem.exceptions.RateNotFound;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,19 +25,16 @@ import com.task.ratemanagementsystem.service.RateService;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RateControllerTest {
 
-	@Autowired
-	private TestRestTemplate testRestTemplate;
+	@InjectMocks
+	RateController rateController;
 
-	@LocalServerPort
-	private int port;
-
-	@MockBean
+	@Mock
 	RateService service;
 
-	@MockBean
+	@Mock
 	RateEntity rateEntity;
 
-	@MockBean
+	@Mock
 	RateResponse rateResp;
 
 	@BeforeEach
@@ -58,11 +58,22 @@ public class RateControllerTest {
 	}
 
 	@Test
-	void testSaveRate() {
-		Mockito.when(service.saveRate(Mockito.any())).thenReturn(rateEntity);
-		ResponseEntity<RateEntity> rateEntity = testRestTemplate.postForEntity("http://localhost:" + port + "/rate",
-				RateEntity.class, null);
-		assertNotNull(rateEntity);
+	void testAddRate() {
+		Mockito.when(service.saveRate(rateEntity)).thenReturn(rateEntity);
+		rateController.addRate(rateEntity);
 	}
-
+	@Test
+	void testUpdateRate() throws RateNotFound {
+		Mockito.when(service.updateRate(rateEntity)).thenReturn(rateEntity);
+		rateController.updateRate(rateEntity);
+	}
+	@Test
+	void testGetRate() throws RateNotFound {
+		Mockito.when(service.searchRate(rateEntity.getRateId())).thenReturn(rateResp);
+		rateController.getRate(rateEntity.getRateId());
+	}
+	@Test
+	void testDeleteRate() throws RateNotFound {
+		rateController.deleteRate(rateEntity.getRateId());
+	}
 }
