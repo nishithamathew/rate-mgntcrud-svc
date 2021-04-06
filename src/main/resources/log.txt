@@ -1,0 +1,42 @@
+06-04-2021 21:25:31.831 [restartedMain] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator.getRemoteEnvironment - Fetching config from server at : http://localhost:8888
+06-04-2021 21:25:33.978 [restartedMain] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator.getRemoteEnvironment - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+06-04-2021 21:25:33.978 [restartedMain] WARN  o.s.c.c.c.ConfigServicePropertySourceLocator.locate - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+06-04-2021 21:25:33.978 [restartedMain] INFO  c.t.r.RateManagementSystemApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+06-04-2021 21:25:34.776 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+06-04-2021 21:25:34.839 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 63ms. Found 1 JPA repository interfaces.
+06-04-2021 21:25:34.949 [restartedMain] WARN  o.s.boot.actuate.endpoint.EndpointId.logWarning - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+06-04-2021 21:25:35.091 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope.setSerializationId - BeanFactory id=d348e805-921d-365e-a918-334107ed3d5c
+06-04-2021 21:25:35.956 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 9011 (http)
+06-04-2021 21:25:35.972 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+06-04-2021 21:25:35.972 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.38]
+06-04-2021 21:25:36.067 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+06-04-2021 21:25:36.067 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2074 ms
+06-04-2021 21:25:36.192 [restartedMain] WARN  c.n.c.sources.URLConfigurationSource.<init> - No URLs will be polled as dynamic configuration sources.
+06-04-2021 21:25:36.192 [restartedMain] INFO  c.n.c.sources.URLConfigurationSource.<init> - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+06-04-2021 21:25:36.208 [restartedMain] INFO  c.n.config.DynamicPropertyFactory.getInstance - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@5a551c01
+06-04-2021 21:25:36.335 [restartedMain] INFO  o.s.b.a.e.w.ServletEndpointRegistrar.register - Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+06-04-2021 21:25:36.514 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+06-04-2021 21:25:36.514 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+06-04-2021 21:25:36.860 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+06-04-2021 21:25:36.907 [task-1] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+06-04-2021 21:25:36.985 [task-1] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.21.Final
+06-04-2021 21:25:37.095 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+06-04-2021 21:25:37.137 [task-1] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+06-04-2021 21:25:37.345 [task-1] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+06-04-2021 21:25:37.353 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3143dae9, org.springframework.security.web.context.SecurityContextPersistenceFilter@64034cf7, org.springframework.security.web.header.HeaderWriterFilter@2c68188, org.springframework.security.web.authentication.logout.LogoutFilter@6daf7e29, com.task.ratemanagementsystem.config.JWTAuthorizationFilter@727a03ee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f011c9e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25c7f3d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@377f6660, org.springframework.security.web.session.SessionManagementFilter@ed7bcfd, org.springframework.security.web.access.ExceptionTranslationFilter@4594a5d0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4807d983]
+06-04-2021 21:25:37.387 [restartedMain] WARN  o.s.c.n.a.ArchaiusAutoConfiguration.configureArchaius - No spring.application.name found, defaulting to 'application'
+06-04-2021 21:25:37.387 [restartedMain] WARN  c.n.c.sources.URLConfigurationSource.<init> - No URLs will be polled as dynamic configuration sources.
+06-04-2021 21:25:37.387 [restartedMain] INFO  c.n.c.sources.URLConfigurationSource.<init> - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+06-04-2021 21:25:38.113 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+06-04-2021 21:25:38.132 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+06-04-2021 21:25:38.202 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+06-04-2021 21:25:38.394 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 18 endpoint(s) beneath base path '/actuator'
+06-04-2021 21:25:38.442 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 9011 (http) with context path ''
+06-04-2021 21:25:38.575 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent - Triggering deferred initialization of Spring Data repositories…
+06-04-2021 21:25:38.795 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent - Spring Data repositories initialized!
+06-04-2021 21:25:38.811 [restartedMain] INFO  c.t.r.RateManagementSystemApplication.logStarted - Started RateManagementSystemApplication in 7.958 seconds (JVM running for 8.499)
+06-04-2021 21:25:58.186 [http-nio-9011-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+06-04-2021 21:25:58.186 [http-nio-9011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+06-04-2021 21:25:58.205 [http-nio-9011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 19 ms
+06-04-2021 21:25:58.902 [http-nio-9011-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase.log - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [239] milliseconds.
+06-04-2021 21:25:59.014 [http-nio-9011-exec-2] INFO  c.t.r.controller.RateController.addRate - Inside RateController Save..
